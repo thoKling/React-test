@@ -40,12 +40,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git config user.name $user_name
-          git config user.email $user_email
-          git remote set-url origin https://github.com/thoKling/React-test.git
+          git config --global user.name $user_name
+          git config --global user.email $user_email
+          git remote set-url origin https://${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}@github.com/thoKling/React-test.git
           npm run deploy
-        env:
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-          repository: ${{ github.repository }}
