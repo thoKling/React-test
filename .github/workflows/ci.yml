@@ -42,7 +42,6 @@ jobs:
         run: |
           git config user.name $user_name
           git config user.email $user_email
-          git remote add origin https://thoKling@github.com/React-test.git
           npm run deploy
         env:
           user_name: 'github-actions[bot]'
