@@ -4,7 +4,7 @@ import MealListView from "./Presentation/Meal/MealList/MealListView";
 
 function App() {
     return (
-        <div className="App">
+        <div className="App" data-testid="AppContainer">
             <MealListView/>
         </div>
     );
